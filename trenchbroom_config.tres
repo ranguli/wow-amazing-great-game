@@ -3,7 +3,7 @@
 [ext_resource type="Resource" uid="uid://b4xhdj0e16lop" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_clip.tres" id="1_cr3q7"]
 [ext_resource type="Resource" uid="uid://co2sb1ng7cw4i" path="res://addons/func_godot/game_config/trenchbroom/tb_brush_tag_trigger.tres" id="1_iu3i2"]
 [ext_resource type="Resource" uid="uid://ca7377sfgj074" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_skip.tres" id="2_v32i2"]
-[ext_resource type="Resource" uid="uid://lyefhcijxrrl" path="res://egg_farmer_fgd.tres" id="3_60ld6"]
+[ext_resource type="Resource" uid="uid://lyefhcijxrrl" path="res://game_fgd.tres" id="3_60ld6"]
 [ext_resource type="Texture2D" uid="uid://decwujsyhj0qy" path="res://addons/func_godot/icon32.png" id="4_jrw8v"]
 [ext_resource type="Script" path="res://addons/func_godot/src/trenchbroom/trenchbroom_game_config.gd" id="5_5nssw"]
 
