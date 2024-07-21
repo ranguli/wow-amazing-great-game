@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="FuncGodotFGDPointClass" load_steps=3 format=3 uid="uid://60bjc7itx83m"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="1_fbnu5"]
-[ext_resource type="Script" path="res://entites/sound/sound.gd" id="2_fdu0h"]
+[ext_resource type="Script" path="res://entities/sound/sound.gd" id="2_fdu0h"]
 
 [resource]
 script = ExtResource("1_fbnu5")

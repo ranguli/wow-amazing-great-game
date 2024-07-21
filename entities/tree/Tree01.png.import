@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfletuplg11su"
-path.s3tc="res://.godot/imported/red_texture_11.png-1c8307c37b5cf66df04202de3d4f1d38.s3tc.ctex"
+uid="uid://b7yjk7f444fkf"
+path.s3tc="res://.godot/imported/Tree01.png-cfe1fe13d127775028c008ed8cb36230.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/dev/red_texture_11.png"
-dest_files=["res://.godot/imported/red_texture_11.png-1c8307c37b5cf66df04202de3d4f1d38.s3tc.ctex"]
+source_file="res://entities/tree/Tree01.png"
+dest_files=["res://.godot/imported/Tree01.png-cfe1fe13d127775028c008ed8cb36230.s3tc.ctex"]
 
 [params]
 

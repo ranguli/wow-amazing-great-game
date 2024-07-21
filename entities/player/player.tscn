@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmgjeo8ln75xy"]
+
+[ext_resource type="Script" path="res://entities/player/player.gd" id="1_t6lsy"]
+[ext_resource type="PackedScene" uid="uid://cfxm13homo3o1" path="res://entities/utility/character_mover.tscn" id="1_x5lu5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ul2cx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6yydi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xlv2f"]
+
+[sub_resource type="Sky" id="Sky_g2032"]
+sky_material = SubResource("ProceduralSkyMaterial_xlv2f")
+
+[sub_resource type="Environment" id="Environment_hbf4e"]
+background_mode = 2
+sky = SubResource("Sky_g2032")
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_t6lsy")
+
+[node name="CharacterMover" parent="." instance=ExtResource("1_x5lu5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ul2cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_6yydi")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87071, 0)
+environment = SubResource("Environment_hbf4e")
