@@ -10,7 +10,7 @@
 [resource]
 script = ExtResource("5_5nssw")
 export_file = false
-game_name = "Egg Farmer"
+game_name = "wow, amazing, great game!"
 icon = ExtResource("4_jrw8v")
 map_formats = Array[Dictionary]([{
 "format": "Valve",
