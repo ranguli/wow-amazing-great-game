@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbwme8va47fbl"]
+
+[ext_resource type="Script" path="res://entites/todo_list/todo_list.gd" id="1_8qfyo"]
+[ext_resource type="Texture2D" uid="uid://c5ibhejvs4q3n" path="res://entites/ui/todo.png" id="1_skhaf"]
+[ext_resource type="AudioStream" uid="uid://k65dqohnauyj" path="res://entites/ui/crunch-sounds/crunch.tres" id="3_gyujq"]
+[ext_resource type="FontFile" uid="uid://b4hdc4rpcy2r3" path="res://entites/todo_list/Milkita.otf" id="3_wwpx1"]
+
+[sub_resource type="Animation" id="Animation_o2tvt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.335, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_in4t0"]
+resource_name = "bob"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.466516, 0.840896, 0.466516),
+"update": 0,
+"values": [Vector3(0, -0.335, 0), Vector3(0, -0.385, 0), Vector3(0, -0.335, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ky6h6"]
+resource_name = "hide"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(0.31864, 0.098073),
+"update": 0,
+"values": [Vector3(0, -0.335, 0), Vector3(0, -1.335, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3qc3o"]
+resource_name = "show"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.335, 0), Vector3(0, -0.335, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewv0c"]
+_data = {
+"RESET": SubResource("Animation_o2tvt"),
+"bob": SubResource("Animation_in4t0"),
+"hide": SubResource("Animation_ky6h6"),
+"show": SubResource("Animation_3qc3o")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3da2"]
+size = Vector3(0.62616, 0.520454, 0.0580025)
+
+[node name="TodoList" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0804539, 0, -1)
+script = ExtResource("1_8qfyo")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.235, 0, 0, 0, 0.234857, 0.00820138, 0, -0.00820138, 0.234857, 0, -0.335, 0)
+texture = ExtResource("1_skhaf")
+
+[node name="Label3D" type="Label3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999998, 0.00181518, 0, -0.00181518, 0.999998, -0.290461, 1.36944, -0.0129189)
+modulate = Color(0, 0, 0, 1)
+text = "raise number of
+eggs in house"
+font = ExtResource("3_wwpx1")
+font_size = 72
+outline_size = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ewv0c")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gyujq")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0783997, -0.0810434, -0.00329399)
+shape = SubResource("BoxShape3D_a3da2")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

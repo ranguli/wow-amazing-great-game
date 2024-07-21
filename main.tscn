@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwkc0704cl6kj"]
+
+[ext_resource type="PackedScene" uid="uid://bmgjeo8ln75xy" path="res://entites/player/player.tscn" id="1_2qhvc"]
+[ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_djt55"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_ecogt"]
+[ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="4_tonlm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shube"]
+albedo_texture = ExtResource("4_tonlm")
+metallic_specular = 0.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3r54d"]
+_surfaces = [{
+"aabb": AABB(-3, 0, -2.5, 7, 0.50001, 5.5),
+"attribute_data": PackedByteArray(0, 0, 160, 63, 0, 0, 0, 191, 0, 0, 160, 63, 0, 0, 128, 190, 0, 0, 16, 192, 0, 0, 128, 190, 0, 0, 16, 192, 0, 0, 0, 191, 0, 0, 192, 191, 0, 0, 0, 191, 0, 0, 160, 63, 0, 0, 0, 191, 0, 0, 160, 63, 0, 0, 128, 190, 0, 0, 192, 191, 0, 0, 128, 190, 0, 0, 192, 63, 0, 0, 16, 192, 0, 0, 192, 63, 0, 0, 160, 63, 0, 0, 160, 191, 0, 0, 160, 63, 0, 0, 160, 191, 0, 0, 16, 192, 0, 0, 192, 191, 0, 0, 16, 192, 0, 0, 160, 63, 0, 0, 16, 192, 0, 0, 160, 63, 0, 0, 160, 63, 0, 0, 192, 191, 0, 0, 160, 63, 0, 0, 192, 63, 0, 0, 0, 191, 0, 0, 192, 63, 0, 0, 128, 190, 0, 0, 160, 191, 0, 0, 128, 190, 0, 0, 160, 191, 0, 0, 0, 191, 0, 0, 160, 191, 0, 0, 0, 191, 0, 0, 16, 64, 0, 0, 0, 191, 0, 0, 16, 64, 0, 0, 128, 190, 0, 0, 160, 191, 0, 0, 128, 190),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 4, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 12, 0, 14, 0, 15, 0, 16, 0, 17, 0, 18, 0, 16, 0, 18, 0, 19, 0, 20, 0, 21, 0, 22, 0, 20, 0, 22, 0, 23, 0),
+"material": SubResource("StandardMaterial3D_shube"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 64, 192, 0, 0, 0, 63, 0, 0, 32, 192, 0, 0, 64, 192, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 63, 0, 0, 32, 192, 0, 0, 64, 192, 0, 0, 0, 63, 0, 0, 32, 192, 0, 0, 64, 192, 0, 0, 0, 63, 0, 0, 64, 64, 0, 0, 64, 192, 0, 0, 0, 0, 0, 0, 64, 64, 0, 0, 64, 192, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 64, 192, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 64, 192, 0, 0, 0, 0, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 63, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 63, 0, 0, 64, 64, 0, 0, 64, 192, 0, 0, 0, 63, 0, 0, 64, 64, 0, 0, 64, 192, 0, 0, 0, 63, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 63, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 63, 0, 0, 64, 64, 0, 0, 64, 192, 0, 0, 0, 63, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 63, 0, 0, 64, 64, 0, 0, 128, 64, 0, 0, 0, 0, 0, 0, 64, 64, 0, 0, 64, 192, 0, 0, 0, 0, 0, 0, 64, 64, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 0, 0, 255, 127, 255, 127, 255, 191, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 0, 0, 255, 255, 255, 255, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 127, 255, 255, 255, 127, 255, 191, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ArrayOccluder3D" id="ArrayOccluder3D_4omjk"]
+vertices = PackedVector3Array(-3, 0.5, -2.5, -3, 0, -2.5, 4, 0, -2.5, 4, 0.5, -2.5, -3, 0.5, -2.5, -3, 0.5, 3, -3, 0, 3, -3, 0, -2.5, 4, 0, -2.5, -3, 0, -2.5, -3, 0, 3, 4, 0, 3, 4, 0.5, -2.5, 4, 0.5, 3, -3, 0.5, 3, -3, 0.5, -2.5, 4, 0.5, -2.5, 4, 0, -2.5, 4, 0, 3, 4, 0.5, 3, -3, 0.5, 3, 4, 0.5, 3, 4, 0, 3, -3, 0, 3)
+indices = PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7, 8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15, 16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e05pt"]
+points = PackedVector3Array(-3, 0.5, -2.5, -3, 0, -2.5, 4, 0, -2.5, 4, 0.5, -2.5, -3, 0.5, 3, -3, 0, 3, 4, 0, 3, 4, 0.5, 3)
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_2qhvc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.520532, 0.850698, 0.073207, 0.151364, -0.176318, 0.972626, 0.840318, -0.495202, -0.220544, 0, 12, 0)
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 1.5
+shadow_reverse_cull_face = true
+
+[node name="FuncGodotMap" type="Node3D" parent="."]
+script = ExtResource("1_djt55")
+local_map_file = "res://maps/level_01.map"
+map_settings = ExtResource("2_ecogt")
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap"]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_3r54d")
+
+[node name="entity_0_occluder_instance" type="OccluderInstance3D" parent="FuncGodotMap/entity_0_worldspawn"]
+occluder = SubResource("ArrayOccluder3D_4omjk")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_e05pt")
